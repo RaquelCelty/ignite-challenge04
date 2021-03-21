@@ -1,32 +1,27 @@
 import { useRef } from 'react';
-import { FiCheckSquare } from 'react-icons/fi';
 
-import { Form } from './styles';
 import { Modal } from '../Modal';
 import { Input } from '../Input';
+import { Foods } from '../../types';
+
 import { FormHandles } from '@unform/core';
 
-interface Food {
-  id: number;
-  name: string,
-  description: string,
-  price: number,
-  available: boolean,
-  image: string
-}
+import { FiCheckSquare } from 'react-icons/fi';
+
+import { Form, IconContainer } from '../../styles/modalGlobal';
 
 interface ModalEditFoodProps {
   isOpen: boolean,
   setIsOpen: () => void,
-  handleUpdateFood: (food: Food) => void
-  editingFood: Food
+  handleUpdateFood: (food: Foods) => void
+  editingFood: Foods
 }
 
 export function ModalEditFood(props: ModalEditFoodProps) {
   const { isOpen, setIsOpen, handleUpdateFood, editingFood } = props;
   const formRef = useRef<FormHandles>(null);
 
-  async function handleSubmit(data: Food) {
+  async function handleSubmit(data: Foods) {
     handleUpdateFood(data);
     setIsOpen();
   };
@@ -44,9 +39,9 @@ export function ModalEditFood(props: ModalEditFoodProps) {
 
         <button type="submit" data-testid="edit-food-button">
           <div className="text">Editar Prato</div>
-          <div className="icon">
+          <IconContainer>
             <FiCheckSquare size={24} />
-          </div>
+          </IconContainer>
         </button>
       </Form>
     </Modal>

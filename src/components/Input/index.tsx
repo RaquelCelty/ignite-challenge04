@@ -52,6 +52,7 @@ export const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
         onBlur={handleInputBlur}
         defaultValue={defaultValue}
         ref={inputRef}
+        required
         {...rest}
       />
     </Container>

@@ -1,6 +1,7 @@
 import { FiPlusSquare } from 'react-icons/fi';
 
 import { Container, TextContainer, IconContainer } from './styles';
+
 import Logo from '../../assets/logo.svg';
 
 interface HeaderProps {
