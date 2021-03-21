@@ -13,7 +13,8 @@ import { Container } from './styles';
 
 interface InputProps {
   name: string,
-  icon: typeof React.Component
+  placeholder: string,
+  icon?: typeof React.Component
 }
 
 export const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
